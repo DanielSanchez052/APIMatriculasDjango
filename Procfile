@@ -1,0 +1,1 @@
+web: gunicorn APIMatriculas.wsgi --log-file -
