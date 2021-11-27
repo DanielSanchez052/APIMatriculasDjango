@@ -6,7 +6,7 @@ from APIMatriculas.settings.base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['apimatriculas.herokuapp.com']
+ALLOWED_HOSTS = ['https://apimatriculas.herokuapp.com/', 'localhost', '127.0.0.1']
 
 DATABASES={}
 
