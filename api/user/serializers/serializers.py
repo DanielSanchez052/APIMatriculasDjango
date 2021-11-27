@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from api.user.models.Department import Department
 from api.user.models.Teacher import Teacher
 from api.user.models.User import User
@@ -14,21 +15,20 @@ class UserMinSerializer(serializers.ModelSerializer):
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Department
-        fields = ['id', 'name']
+        fields = ['id', 'number', 'name']
 
 
 class TeacherListSerializer(serializers.ModelSerializer):
-    person = UserSerializer(read_only=True)
-    department = DepartmentSerializer(read_only=True)
+    person = UserSerializer()
+    department = DepartmentSerializer()
 
     class Meta:
         model = Teacher
-        fields = ['id', 'person', 'department']
+        fields = ['number', 'person', 'department']
 
 
 class TeacherSerializer(serializers.ModelSerializer):
-    #erson = UserSerializer()
 
     class Meta:
         model = Teacher
-        fields = ['id', 'person', 'department']
+        fields = ['number', 'person', 'department']

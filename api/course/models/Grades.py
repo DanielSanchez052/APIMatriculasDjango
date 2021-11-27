@@ -3,6 +3,7 @@ from api.core.models import BaseModel
 
 
 class Grades(BaseModel):
+    number = models.IntegerField("number of Grade", unique=True, null=False, blank=False)
     name = models.TextField('Grade name', max_length=100)
 
     class Meta:
