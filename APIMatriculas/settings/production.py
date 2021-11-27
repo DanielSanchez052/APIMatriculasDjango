@@ -4,7 +4,7 @@ import dj_database_url
 from APIMatriculas.settings.base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['apimatriculas.herokuapp.com']
 
