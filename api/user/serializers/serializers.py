@@ -3,7 +3,7 @@ from rest_framework import serializers
 from api.user.models.Department import Department
 from api.user.models.Teacher import Teacher
 from api.user.models.User import User
-from api.user.serializers.User import UserSerializer
+from api.user.serializers.User import UserListSerializer
 
 
 class UserMinSerializer(serializers.ModelSerializer):
@@ -19,12 +19,12 @@ class DepartmentSerializer(serializers.ModelSerializer):
 
 
 class TeacherListSerializer(serializers.ModelSerializer):
-    person = UserSerializer()
+    person = UserListSerializer()
     department = DepartmentSerializer()
 
     class Meta:
         model = Teacher
-        fields = ['number', 'person', 'department']
+        fields = ['id','number', 'person', 'department']
 
 
 class TeacherSerializer(serializers.ModelSerializer):
